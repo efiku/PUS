@@ -5,11 +5,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ssrr", "ssrr\ssrr.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "udp", "udp\udp.vcxproj", "{3B196818-A124-43A1-B56A-2A221DC4C71F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "udpv6", "udpv6\udpv6.vcproj", "{36C6B3FB-B00D-45A9-836E-5AD764F1337D}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ping", "ping\ping.vcproj", "{78500D97-9E75-4A97-BEDD-ABDA71C84B4B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tcp", "tcp\tcp.vcxproj", "{3A300E8D-D04F-4924-A9EB-5F35C7ADB9F6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "udpv6", "udpv6\udpv6.vcxproj", "{42229111-01BA-498E-B77D-ED5C767FE061}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{3B196818-A124-43A1-B56A-2A221DC4C71F}.Debug|Win32.Build.0 = Debug|Win32
 		{3B196818-A124-43A1-B56A-2A221DC4C71F}.Release|Win32.ActiveCfg = Release|Win32
 		{3B196818-A124-43A1-B56A-2A221DC4C71F}.Release|Win32.Build.0 = Release|Win32
-		{36C6B3FB-B00D-45A9-836E-5AD764F1337D}.Debug|Win32.ActiveCfg = Debug|Win32
-		{36C6B3FB-B00D-45A9-836E-5AD764F1337D}.Debug|Win32.Build.0 = Debug|Win32
-		{36C6B3FB-B00D-45A9-836E-5AD764F1337D}.Release|Win32.ActiveCfg = Release|Win32
-		{36C6B3FB-B00D-45A9-836E-5AD764F1337D}.Release|Win32.Build.0 = Release|Win32
 		{78500D97-9E75-4A97-BEDD-ABDA71C84B4B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{78500D97-9E75-4A97-BEDD-ABDA71C84B4B}.Debug|Win32.Build.0 = Debug|Win32
 		{78500D97-9E75-4A97-BEDD-ABDA71C84B4B}.Release|Win32.ActiveCfg = Release|Win32
@@ -37,6 +33,10 @@ Global
 		{3A300E8D-D04F-4924-A9EB-5F35C7ADB9F6}.Debug|Win32.Build.0 = Debug|Win32
 		{3A300E8D-D04F-4924-A9EB-5F35C7ADB9F6}.Release|Win32.ActiveCfg = Release|Win32
 		{3A300E8D-D04F-4924-A9EB-5F35C7ADB9F6}.Release|Win32.Build.0 = Release|Win32
+		{42229111-01BA-498E-B77D-ED5C767FE061}.Debug|Win32.ActiveCfg = Debug|Win32
+		{42229111-01BA-498E-B77D-ED5C767FE061}.Debug|Win32.Build.0 = Debug|Win32
+		{42229111-01BA-498E-B77D-ED5C767FE061}.Release|Win32.ActiveCfg = Release|Win32
+		{42229111-01BA-498E-B77D-ED5C767FE061}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
