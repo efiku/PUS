@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include <lib.h>
 
+#pragma comment(lib, "ws2_32.lib")
+#pragma warning(disable : 4701)
+
 #define SOURCE_ADDRESS "fd8e:55e0:a9d1::/48"
 #define SOURCE_PORT 5050
 
@@ -18,16 +21,16 @@ int main(int argc, char** argv)
     unsigned short      checksum;           /* Zmienna wykorzystywana do obliczenia sumy kontrolnej. */
 
     /* Bufor na naglowek IP, naglowek UDP oraz pseudo-naglowek: */
-    unsigned char       datagram[sizeof(struct ip) + sizeof(struct udphdr) + sizeof(struct phdr)];
+    unsigned char       datagram[sizeof(struct ipv6) + sizeof(struct udphdr) + sizeof(struct phdrv6)];
 
     /* Wskaznik na naglowek IP (w buforze okreslonym przez 'datagram'): */
-    struct ip           *ip_header          = (struct ip *)datagram;
+    struct ipv6           *ip_header          = (struct ipv6 *)datagram;
 
     /* Wskaznik na naglowek UDP (w buforze okreslonym przez 'datagram'): */
     struct udphdr       *udp_header         = (struct udphdr *)(datagram + sizeof(struct ip));
 
     /* Wskaznik na pseudo-naglowek (w buforze okreslonym przez 'datagram'): */
-    struct phdr         *pseudo_header      = (struct phdr *)(datagram + sizeof(struct ip) + sizeof(struct udphdr));
+    struct phdrv6         *pseudo_header      = (struct phdrv6 *)(datagram + sizeof(struct ipv6) + sizeof(struct udphdr));
 
     /* Sprawdzenie argumentow wywolania: */
     if (argc != 3) {
@@ -45,7 +48,7 @@ int main(int argc, char** argv)
 
     /* Wskazowki dla getaddrinfo(): */
     memset(&hints, 0, sizeof(struct addrinfo));
-    hints.ai_family     =   AF_INET;        /* Domena komunikacyjna (IPv4). */
+	hints.ai_family     =   AF_INET6;        /* Domena komunikacyjna (IPv6). */
     hints.ai_socktype   =   SOCK_RAW;       /* Typ gniazda. */
     hints.ai_protocol   =   IPPROTO_UDP;    /* Protokol. */
 
@@ -70,7 +73,7 @@ int main(int argc, char** argv)
         }
 
         /* Ustawienie opcji IP_HDRINCL: */
-        retval = setsockopt(sockfd, IPPROTO_IP, IP_HDRINCL, (const char*)&socket_option, sizeof(int));
+		retval = setsockopt(sockfd, IPPROTO_IP, IP_HDRINCL, (const char*)&socket_option, sizeof(int));
         if (retval == SOCKET_ERROR) {
             fprintf(stderr, "setsockopt() failed: %d\n", WSAGetLastError());
             exit(EXIT_FAILURE);
@@ -90,24 +93,11 @@ int main(int argc, char** argv)
     /********************************/
     /* Wypelnienie pol naglowka IP: */
     /********************************/
-    ip_header->ip_hl                =   5; /* 5 * 32 bity = 20 bajtow */
-    ip_header->ip_v                 =   4; /* Wersja protokolu (IPv4). */
-    ip_header->ip_tos               =   0; /* Pole TOS wyzerowane. */
-    ip_header->ip_len               =   0; /* Dlugosc (naglowek + dane); pole zawsze wypelniane przez system. */
-    ip_header->ip_id                =   0; /* Pole Identification; wypelniane przez systemFilled in when zero. */
-    ip_header->ip_off               =   0; /* Pole Fragment Offset. */
-    ip_header->ip_ttl               =   128; /* TTL */
-
-    /* Identyfikator enkapsulowanego protokolu: */
-    ip_header->ip_p                 =   IPPROTO_UDP;
-
-    /* Adres zrodlowy: */
-    ip_header->ip_src.s_addr        =   inet_addr(SOURCE_ADDRESS);
-
-    /* Adres docelowy: */
-    ip_header->ip_dst.s_addr        = ((struct sockaddr_in*)rp->ai_addr)->sin_addr.s_addr;
-
-    /* ip_header->ip_sum            =   0; */ /* Zawsze wypelniane przez system. */
+	inet_pton(AF_INET6, SOURCE_ADDRESS, &ip_header->ip_src); //adres zrodlowy
+	inet_pton(AF_INET6, argv[1], &ip_header->ip_dst); //adres docelowy
+	ip_header->ip_v_tc_flow         =   6; /* Wersja protokolu (IPv6). */
+	ip_header->ip_hop               =   128;
+	ip_header->ip_pl               =   36;
 
     /*********************************/
     /* Wypelnienie pol naglowka UDP: */
@@ -125,13 +115,9 @@ int main(int argc, char** argv)
     /************************************/
 
     /* Zrodlowy adres IP: */
-    pseudo_header->ip_src.s_addr    =   ip_header->ip_src.s_addr;
+    pseudo_header->ip_src    =   ip_header->ip_src;
     /* Docelowy adres IP: */
-    pseudo_header->ip_dst.s_addr    =   ip_header->ip_dst.s_addr;
-    /* Pole wyzerowane: */
-    pseudo_header->unused           =   0;
-    /* Identyfikator enkapsulowanego protokolu: */
-    pseudo_header->protocol         =   ip_header->ip_p;
+    pseudo_header->ip_dst    =   ip_header->ip_dst;
     /* Rozmiar naglowka UDP i danych: */
     pseudo_header->length           =   udp_header->uh_ulen;
     /* Obliczenie sumy kontrolnej na podstawie naglowka UDP i pseudo-naglowka: */
@@ -149,6 +135,7 @@ int main(int argc, char** argv)
         if (retval == SOCKET_ERROR) {
             fprintf(stderr, "sentdo() failed: %d\n", WSAGetLastError());
         }
+		printf("Send");
         Sleep(1000);
     }
 }
