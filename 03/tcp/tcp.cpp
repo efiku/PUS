@@ -74,8 +74,8 @@ int main(int argc, char** argv)
 
 	addr.S_un.S_addr = ((struct sockaddr_in *)(result->ai_addr))->sin_addr.s_addr;
 
-	tcp->th_sport = htons(rand() % 3000 + 1024);
-	tcp->th_seq = tcp->th_sport = htons(rand());
+	tcp->th_sport = htons(rand() % 3000 + 1024); // losowy port z przedzialu <1024;4024>
+	tcp->th_seq = htons(rand());
 	tcp->th_dport = htons((u_short)atoi(argv[2]));
 	tcp->th_ack = 0;
 	tcp->th_off = 0;
@@ -89,7 +89,7 @@ int main(int argc, char** argv)
 	iphdr->ip_len = 0;
 	iphdr->ip_off = 0;
 	iphdr->ip_p = IPPROTO_TCP;
-	iphdr->ip_src.S_un.S_addr = inet_addr("192.168.0.1");
+	iphdr->ip_src.S_un.S_addr = inet_addr("192.168.0.1"); //"losowy" adres zrodlowy
 	iphdr->ip_sum = internet_checksum((unsigned short *)tcp, sizeof(struct tcphdr) + sizeof(struct phdr));
 	iphdr->ip_tos = 0;
 	iphdr->ip_v = 4;
@@ -101,8 +101,8 @@ int main(int argc, char** argv)
 		tcp->th_seq = tcp->th_sport = htons(rand());
 		iphdr->ip_sum = internet_checksum((unsigned short *)tcp, sizeof(struct tcphdr) + sizeof(struct phdr));
 		pcap_sendpacket(device, datagram, sizeof(ip) + sizeof(tcphdr));
-		Sleep(1000);
 		std::cout<<"Send"<<std::endl;
+		Sleep(1000);
 	}
 
 	std::cin.get();
