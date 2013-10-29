@@ -1,13 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C++ Express 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client1", "client1\client1.vcxproj", "{8491C9FC-9C8F-4C29-AA7D-E263034C3B94}"
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client1", "client1\client1.vcproj", "{8491C9FC-9C8F-4C29-AA7D-E263034C3B94}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server1", "server1\server1.vcxproj", "{E956B969-A1D3-4182-A4E9-7E3EADF936B9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server1", "server1\server1.vcproj", "{E956B969-A1D3-4182-A4E9-7E3EADF936B9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client2", "client2\client2.vcxproj", "{AB2CDE3B-B3BF-4C9B-AE9E-A39C2645E456}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client2", "client2\client2.vcproj", "{AB2CDE3B-B3BF-4C9B-AE9E-A39C2645E456}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server2", "server2\server2.vcxproj", "{F68FE58E-A8A7-4DB7-AD72-3F8AF64A8F9E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server2", "server2\server2.vcproj", "{F68FE58E-A8A7-4DB7-AD72-3F8AF64A8F9E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server3", "server3\server3.vcproj", "{0B4E908E-AAA5-4A48-8C49-370B2ACBF17B}"
 EndProject
