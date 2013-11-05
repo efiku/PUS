@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hostname2ip", "hostname2ip\hostname2ip.vcproj", "{19FADAB2-7342-42EB-AC94-16D00E1316BF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server4", "server4\server4.vcproj", "{DD11A0D9-3694-4C93-9FF7-A962BA9A395A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server6", "server6\server6.vcproj", "{F3749935-8664-44AE-994B-550497E9691D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server\server.vcproj", "{5DD5D9F4-FBA7-4FD6-8ABD-8EC471E325AB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client\client.vcproj", "{C957C4FA-4314-4C2C-9F63-416EAD859855}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client4", "client4\client4.vcproj", "{567AB6B6-D20F-4A80-ACBF-756160251FD5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client6", "client6\client6.vcproj", "{1DF6C45B-642E-4D7D-A715-06B4650838F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ipaddr", "ipaddr\ipaddr.vcproj", "{C9C9E319-6B81-4B58-B466-6B5B8606C65C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19FADAB2-7342-42EB-AC94-16D00E1316BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{19FADAB2-7342-42EB-AC94-16D00E1316BF}.Debug|Win32.Build.0 = Debug|Win32
+		{19FADAB2-7342-42EB-AC94-16D00E1316BF}.Release|Win32.ActiveCfg = Release|Win32
+		{19FADAB2-7342-42EB-AC94-16D00E1316BF}.Release|Win32.Build.0 = Release|Win32
+		{DD11A0D9-3694-4C93-9FF7-A962BA9A395A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD11A0D9-3694-4C93-9FF7-A962BA9A395A}.Debug|Win32.Build.0 = Debug|Win32
+		{DD11A0D9-3694-4C93-9FF7-A962BA9A395A}.Release|Win32.ActiveCfg = Release|Win32
+		{DD11A0D9-3694-4C93-9FF7-A962BA9A395A}.Release|Win32.Build.0 = Release|Win32
+		{F3749935-8664-44AE-994B-550497E9691D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3749935-8664-44AE-994B-550497E9691D}.Debug|Win32.Build.0 = Debug|Win32
+		{F3749935-8664-44AE-994B-550497E9691D}.Release|Win32.ActiveCfg = Release|Win32
+		{F3749935-8664-44AE-994B-550497E9691D}.Release|Win32.Build.0 = Release|Win32
+		{5DD5D9F4-FBA7-4FD6-8ABD-8EC471E325AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5DD5D9F4-FBA7-4FD6-8ABD-8EC471E325AB}.Debug|Win32.Build.0 = Debug|Win32
+		{5DD5D9F4-FBA7-4FD6-8ABD-8EC471E325AB}.Release|Win32.ActiveCfg = Release|Win32
+		{5DD5D9F4-FBA7-4FD6-8ABD-8EC471E325AB}.Release|Win32.Build.0 = Release|Win32
+		{C957C4FA-4314-4C2C-9F63-416EAD859855}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C957C4FA-4314-4C2C-9F63-416EAD859855}.Debug|Win32.Build.0 = Debug|Win32
+		{C957C4FA-4314-4C2C-9F63-416EAD859855}.Release|Win32.ActiveCfg = Release|Win32
+		{C957C4FA-4314-4C2C-9F63-416EAD859855}.Release|Win32.Build.0 = Release|Win32
+		{567AB6B6-D20F-4A80-ACBF-756160251FD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{567AB6B6-D20F-4A80-ACBF-756160251FD5}.Debug|Win32.Build.0 = Debug|Win32
+		{567AB6B6-D20F-4A80-ACBF-756160251FD5}.Release|Win32.ActiveCfg = Release|Win32
+		{567AB6B6-D20F-4A80-ACBF-756160251FD5}.Release|Win32.Build.0 = Release|Win32
+		{1DF6C45B-642E-4D7D-A715-06B4650838F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1DF6C45B-642E-4D7D-A715-06B4650838F0}.Debug|Win32.Build.0 = Debug|Win32
+		{1DF6C45B-642E-4D7D-A715-06B4650838F0}.Release|Win32.ActiveCfg = Release|Win32
+		{1DF6C45B-642E-4D7D-A715-06B4650838F0}.Release|Win32.Build.0 = Release|Win32
+		{C9C9E319-6B81-4B58-B466-6B5B8606C65C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C9C9E319-6B81-4B58-B466-6B5B8606C65C}.Debug|Win32.Build.0 = Debug|Win32
+		{C9C9E319-6B81-4B58-B466-6B5B8606C65C}.Release|Win32.ActiveCfg = Release|Win32
+		{C9C9E319-6B81-4B58-B466-6B5B8606C65C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
